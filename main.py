@@ -42,6 +42,7 @@ def  neirong():
     request_url = 'https://api.vvhan.com/api/love'
     r = requests.get(request_url).text
     # 返回的结果
+    print(r)
     return r
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
