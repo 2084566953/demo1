@@ -24,7 +24,7 @@ def get_weather():
   print(res)
   weather = res['data']['list'][0]
   print(weather)
-  return weather['weather'], math.floor(weather['temp']), math.floor(weather['high']), math.floor(weather['low'])
+  return weather['weather'],weather['city'], math.floor(weather['temp']), math.floor(weather['high']), math.floor(weather['low'])
 
 # def get_count():
 #   print(today)
@@ -37,6 +37,12 @@ def get_birthday():
     next = next.replace(year=next.year + 1)
   return (next - today).days
 
+def  neirong():
+    # 骚话接口:https://api.vvhan.com/api/sao     #情话接口:https://api.vvhan.com/api/love
+    request_url = 'https://api.vvhan.com/api/love'
+    r = requests.get(request_url).text
+    # 返回的结果
+    return r
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
   if words.status_code != 200:
@@ -51,7 +57,7 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature, highest, lowest = get_weather()
-data = {"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"highest": {"value":highest,"color":get_random_color()},"lowest":{"value":lowest, "color":get_random_color()}}
+data = {"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"highest": {"value":highest,"color":get_random_color()},"lowest":{"value":lowest, "color":get_random_color()},"qinghua":{"value":neirong(), "color":get_random_color()}}
 count = 0
 for user_id in user_ids:
   res = wm.send_template(user_id, template_id, data)
