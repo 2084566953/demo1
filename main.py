@@ -40,9 +40,8 @@ def get_birthday():
 def  neirong():
     request_url = 'https://api.vvhan.com/api/love?type=json'
     r = requests.get(request_url).json()
-    # 返回的结果
-    print("----------------",r.get('ishan'),"------------------------")
-    return r.get('ishan')
+    print(r)
+    return r
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
   if words.status_code != 200:
