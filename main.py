@@ -39,9 +39,13 @@ def get_birthday():
 
 def  neirong():
     request_url = 'https://api.vvhan.com/api/love?type=json'
-    r = requests.get(request_url).json()
+    r = requests.get(request_url)
+    if r.status_code !=200:
+      return neirong()
     print(r)
-    return r
+    return r.json()['ishan']
+    #print(r)
+    
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
   if words.status_code != 200:
