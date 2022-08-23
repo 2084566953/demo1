@@ -41,7 +41,7 @@ def  neirong():
     request_url = 'https://api.vvhan.com/api/love?type=json'
     r = requests.get(request_url).json()
     # 返回的结果
-    print("----------------",r"------------------------")
+    print("----------------",r.get('ishan'),"------------------------")
     return r.get('ishan')
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
