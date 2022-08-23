@@ -38,11 +38,11 @@ def get_birthday():
   return (next - today).days
 
 def  neirong():
-    request_url = 'https://api.vvhan.com/api/love'
-    r = requests.get(request_url).text
+    request_url = 'https://api.vvhan.com/api/love?type=json'
+    r = requests.get(request_url).json()
     # 返回的结果
     print("----------------",r"------------------------")
-    return r
+    return r.get('ishan')
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
   if words.status_code != 200:
