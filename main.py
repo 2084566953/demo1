@@ -38,11 +38,10 @@ def get_birthday():
   return (next - today).days
 
 def  neirong():
-    # 骚话接口:https://api.vvhan.com/api/sao     #情话接口:https://api.vvhan.com/api/love
     request_url = 'https://api.vvhan.com/api/love'
     r = requests.get(request_url).text
     # 返回的结果
-    print(r)
+    print("----------------",r"------------------------")
     return r
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
