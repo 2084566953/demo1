@@ -57,8 +57,8 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
-wea, province, city,temp,wind,low ,airQuality= get_weather()
-data = {"weather":{"value":wea,"color":get_random_color()},"province":{"value":province,"color":get_random_color()},"city":{"value":city,"color":get_random_color()},"temp":{"value":temp,"color":get_random_color()},"wind":{"value":wind,"color":get_random_color()},"low":{"value":low,"color":get_random_color()},"airQuality":{"value":airQuality,"color":get_random_color()},"love_days":{"value":"999"},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"qinghua":{"value":neirong(), "color":get_random_color()}}
+wea, province, city,temp,wind,low ,airQuality,high= get_weather()
+data = {"weather":{"value":wea,"color":get_random_color()},"province":{"value":province,"color":get_random_color()},"high":{"value":high,"color":get_random_color()},"city":{"value":city,"color":get_random_color()},"temp":{"value":temp,"color":get_random_color()},"wind":{"value":wind,"color":get_random_color()},"low":{"value":low,"color":get_random_color()},"airQuality":{"value":airQuality,"color":get_random_color()},"love_days":{"value":"999"},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"qinghua":{"value":neirong(), "color":get_random_color()}}
 print(data)
 count = 0
 for user_id in user_ids:
