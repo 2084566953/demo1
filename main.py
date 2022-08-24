@@ -61,7 +61,8 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 wea, temperature,province, city = get_weather()
 print("-----------------",temperature)
-data = {"weather":{"value":wea,"color":get_random_color()},"province":{"value":province,"color":get_random_color()},"city":{"value":city,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"love_days":{"value":"999"},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"highest": {"value":highest,"color":get_random_color()},"lowest":{"value":lowest, "color":get_random_color()},"qinghua":{"value":neirong(), "color":get_random_color()}}
+print("-----------------",city)
+data = {"weather":{"value":wea,"color":get_random_color()},"province":{"value":province,"color":get_random_color()},"city":{"value":city,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"love_days":{"value":"999"},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"qinghua":{"value":neirong(), "color":get_random_color()}}
 print(data)
 count = 0
 for user_id in user_ids:
