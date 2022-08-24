@@ -24,7 +24,7 @@ def get_weather():
   print(res)
   weather = res['data']['list'][0]
   print(weather)
-  return weather['weather'], weather['high'],weather['province'],weather[' ']
+  return weather['weather'], weather['high'],weather['province'],weather['city']
 
 # def get_count():
 #   print(today)
