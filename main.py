@@ -39,7 +39,7 @@ def  neirong():
     request_url = 'https://api.vvhan.com/api/love?type=json'
     r = requests.get(request_url)
     if r.status_code !=200:
-      return neirong()
+      print(r.status)
     print(r)
     return r.json()['ishan']
     
