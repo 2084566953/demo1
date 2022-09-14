@@ -40,8 +40,7 @@ def  neirong():
     r = requests.get(request_url)
     if r.status_code !=200:
       print(r.status_code)
-    print(r)
-    return r.json()['ishan']
+    return r.json()["ishan"]
     
 def  lizhi():
     request_url = 'https://api.vvhan.com/api/en?type=sj'
