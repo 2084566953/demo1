@@ -37,9 +37,8 @@ def get_birthday():
 
 def  neirong():
     request_url = 'https://api.vvhan.com/api/love?type=json'
-    r = requests.get(request_url).json()
-    print(r)
-    return r["ishan"]
+    r = requests.get(request_url)
+    print(r.json())
     
 def  lizhi():
     request_url = 'https://api.vvhan.com/api/en?type=sj'
