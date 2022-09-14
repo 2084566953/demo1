@@ -37,10 +37,9 @@ def get_birthday():
 
 def  neirong():
     request_url = 'https://api.vvhan.com/api/love?type=json'
-    r = requests.get(request_url)
-    if r.status_code !=200:
-      print(r.status_code)
-    return r.json()["ishan"]
+    r = requests.get(request_url).json()
+    print(r)
+    return r["ishan"]
     
 def  lizhi():
     request_url = 'https://api.vvhan.com/api/en?type=sj'
