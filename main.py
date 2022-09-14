@@ -42,7 +42,6 @@ def  neirong():
       return neirong()
     print(r)
     return r.json()['ishan']
-    #print(r)
     
 def  lizhi():
     request_url = 'https://api.vvhan.com/api/en?type=sj'
