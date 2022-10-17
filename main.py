@@ -48,7 +48,7 @@ def get_birthday():
     
 def neirong():
     r = requests.get("https://api.vvhan.com/api/love")
-    return r.json().get("ishan")
+    return r.json()['ishan']
     
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
