@@ -48,11 +48,10 @@ def  lizhi():
     return date['en']
     
 def neirong():
-    r = requests.get("https://api.vvhan.com/api/love?type=json")
-    print(r,"<--------------------------------->")
-    if r.status_code != 200:
-      return neirong()
-    return r.json()['ishan']
+    words = requests.get("https://api.shadiao.pro/chp")
+  if words.status_code != 200:
+    return get_words()
+  return words.json()['data']['text']
     
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
