@@ -35,11 +35,6 @@ def get_birthday():
     next = next.replace(year=next.year + 1)
   return (next - today).days
 
-def  neirong():
-    request_url = 'https://api.vvhan.com/api/love?type=json'
-    r = requests.get(request_url)
-    print(r)
-    
 def  lizhi():
     request_url = 'https://api.vvhan.com/api/en?type=sj'
     r = requests.get(request_url).json()
