@@ -35,14 +35,14 @@ def get_birthday():
     next = next.replace(year=next.year + 1)
   return (next - today).days
 
-def  lizhi():
-    request_url = 'https://api.vvhan.com/api/en?type=sj'
-    r = requests.get(request_url).json()
+#def  lizhi():
+    #request_url = 'https://api.vvhan.com/api/en?type=sj'
+    #r = requests.get(request_url).json()
     # if r.status_code != 200:
     #     return neirong()
-    date = r['data']
-    print(date['en'])
-    return date['en']
+    #date = r['data']
+    #print(date['en'])
+    #return date['en']
     
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
@@ -58,7 +58,7 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, province, city,temp,wind,low ,airQuality,high= get_weather()
-data = {"weather":{"value":wea,"color":get_random_color()},"province":{"value":province,"color":get_random_color()},"high":{"value":high,"color":get_random_color()},"city":{"value":city,"color":get_random_color()},"temp":{"value":temp,"color":get_random_color()},"wind":{"value":wind,"color":get_random_color()},"low":{"value":low,"color":get_random_color()},"airQuality":{"value":airQuality,"color":get_random_color()},"love_days":{"value":"999"},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"qinghua":{"value":"我喜欢的一个女生叫魏文静", "color":get_random_color()},"en":{"value":lizhi(), "color":get_random_color()}}
+data = {"weather":{"value":wea,"color":get_random_color()},"province":{"value":province,"color":get_random_color()},"high":{"value":high,"color":get_random_color()},"city":{"value":city,"color":get_random_color()},"temp":{"value":temp,"color":get_random_color()},"wind":{"value":wind,"color":get_random_color()},"low":{"value":low,"color":get_random_color()},"airQuality":{"value":airQuality,"color":get_random_color()},"love_days":{"value":"999"},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"qinghua":{"value":"我喜欢的一个女生叫魏文静", "color":get_random_color()},"en":{"value":"加油奥里给", "color":get_random_color()}}
 print(data)
 count = 0
 for user_id in user_ids:
