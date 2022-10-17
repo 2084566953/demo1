@@ -41,8 +41,6 @@ def  lizhi():
     request_url = 'https://api.vvhan.com/api/en'
     r = requests.get(request_url).json()
     print(r,"<========>")
-    if r.status_code != 200:
-        return neirong()
     date = r['data']
     print(date['en'])
     return date['en']
