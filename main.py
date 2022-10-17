@@ -46,10 +46,10 @@ def  lizhi():
     return date['en']
     
 def neirong():
-    words = requests.get("https://api.shadiao.pro/chp")
+  words = requests.get("https://api.lovelive.tools/api/SweetNothings")
   if words.status_code != 200:
     return get_words()
-  return words.json()['data']['text']
+  return words.text
     
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
