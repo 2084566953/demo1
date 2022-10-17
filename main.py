@@ -18,6 +18,7 @@ app_secret = os.environ["APP_SECRET"]
 user_ids = os.environ["USER_ID"].split("\n")
 template_id = os.environ["TEMPLATE_ID"]
 
+heads={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0'}
 
 def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
@@ -47,7 +48,7 @@ def get_birthday():
     
 def neirong():
     request_url = 'https://api.vvhan.com/api/love?type=json'
-    r = requests.get(request_url).json()
+    r = requests.get(request_url,heads).json()
     print(r.get("ishan"))    
     
 def get_words():
