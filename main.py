@@ -49,7 +49,7 @@ def get_birthday():
 def neirong():
     r = requests.get("https://api.vvhan.com/api/love?type=json")
     print(r,"<--------------------------------->")
-    if words.status_code != 200:
+    if r.status_code != 200:
       return neirong()
     return r.json()['ishan']
     
