@@ -37,14 +37,15 @@ def get_birthday():
     next = next.replace(year=next.year + 1)
   return (next - today).days
 
-#def  lizhi():
-    #request_url = 'https://api.vvhan.com/api/en?type=sj'
-    #r = requests.get(request_url).json()
-    # if r.status_code != 200:
-    #     return neirong()
-    #date = r['data']
-    #print(date['en'])
-    #return date['en']
+def  lizhi():
+    request_url = 'https://api.vvhan.com/api/en'
+    r = requests.get(request_url).json()
+    print(r,"<========>")
+     if r.status_code != 200:
+         return neirong()
+    date = r['data']
+    print(date['en'])
+    return date['en']
     
 def neirong():
     r = requests.get("https://api.vvhan.com/api/love?type=json")
