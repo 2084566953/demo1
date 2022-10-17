@@ -47,7 +47,7 @@ def get_birthday():
     #return date['en']
     
 def neirong():
-    r = requests.get("https://api.vvhan.com/api/love")
+    r = requests.get("https://api.vvhan.com/api/love",heads)
     print(r,"<--------------------------------->")
     return r.json()['ishan']
     
